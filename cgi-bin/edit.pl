@@ -33,4 +33,13 @@ print<<HTML;
 <input type="hidden" value=$title name="title">
 <textarea style="width:313px; height:227px"; maxlength="255" name="markdown2" rows="15" cols="17" id="markdown2">
 HTML
+for(my $j=0; $j<@registro; $j++){
+print "$registro[$j]\n";
+}
+print <<HTML;
+</textarea>
+<br>
+<input type="submit">
+</form>
+HTML
 
