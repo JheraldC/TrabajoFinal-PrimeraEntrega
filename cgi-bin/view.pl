@@ -63,5 +63,8 @@ foreach my $linea (@registro){
        print "<p><em>$1</em></p>";
      }
   }
+  if($linea =~ /^~{2}(.*)~{2}$/){
+    print "<p><del>$1</del></p>";
+  }
 }
 
