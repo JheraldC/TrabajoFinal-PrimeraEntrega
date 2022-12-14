@@ -34,3 +34,11 @@ while( my @row = $sth->fetchrow_array ) {
 }
 $sth->finish;
 $dbh->disconnect;
+
+print "<ul>\n";
+foreach my $title (@registro){
+  print "<li><a href="."view.pl?fn=$title".">$title</a>\n";
+  print "<a class=text style=color:red href="."delete.pl?title=$title".">X</a>\n";
+  print "<a class=text style=color:blue href="."edit.pl?title=$title".">E</a>\n";
+}
+
