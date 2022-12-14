@@ -26,3 +26,11 @@ while( my @row = $sth->fetchrow_array ) {
 }
 $sth->finish;
 
+print<<HTML;
+<form action="new.pl" method="GET">
+<label for="markdown2">Texto</label>
+<br>
+<input type="hidden" value=$title name="title">
+<textarea style="width:313px; height:227px"; maxlength="255" name="markdown2" rows="15" cols="17" id="markdown2">
+HTML
+
