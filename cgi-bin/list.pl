@@ -37,11 +37,10 @@ $dbh->disconnect;
 
 print "<ul>\n";
 foreach my $title (@registro){
-  print "<li><a href="."view.pl?fn=$title".">$title</a>\n";
+  print "<li><a href="."view.pl?title=$title".">$title</a>\n";
   print "<a class=text style=color:red href="."delete.pl?title=$title".">X</a>\n";
   print "<a class=text style=color:blue href="."edit.pl?title=$title".">E</a>\n";
 }
-
 print "</ul>";
 print <<HTML;
   <hr>
@@ -50,3 +49,4 @@ print <<HTML;
   <a href="../index.html">Volver al inicio</a>
   </body>
 </html>
+HTML

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use CGI;
+use CGI qw(-utf8);
 use DBI;
 
 my $q = CGI->new;
@@ -9,7 +9,7 @@ print $q->header("text/html; charset=utf-8");
 my $titulo = $q->param('titulo');
 my $markdown = $q->param('markdown');
 #Segundo
-my $title = $q->param('title';
+my $title = $q->param('title');
 my $markdown2 = $q->param('markdown2');
 
 my $user = 'alumno';
@@ -39,4 +39,24 @@ print <<BLOCK;
 </html>
 BLOCK
 }
-
+elsif((!defined($titulo) and !defined($markdown)) or (defined($title) and defined($markdown2))){
+my $sth = $dbh->prepare("UPDATE Fakewiki SET Text=? WHERE Title=?");
+$sth->execute($markdown2, $title);
+print <<BLOCK;
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Pagina wiki</title>
+  </head>
+    <body>
+    <h1>$title</h1>
+    <br>
+    <h3>$markdown2</h3>
+    <hr>
+    <h2>Página grabada
+    <a href="list.pl"> Lista de páginas</a>
+    </h2>
+    </body>
+</html>
+BLOCK
+}
