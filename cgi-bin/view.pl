@@ -69,5 +69,8 @@ foreach my $linea (@registro){
   if($linea =~ /^(.*)\[(.*)\]\((.*)\)(.*)/){
    print "<p>$1<a href=$3>$2</a>$4</p>";
   }
+  if(!(index($linea, "`") != -1) and !(index($linea, "#") != -1) and !(index($linea, "~") != -1) and !(index($linea, "*") != -1)){
+    print "<p>$linea</p>";
+  }
 }
 
