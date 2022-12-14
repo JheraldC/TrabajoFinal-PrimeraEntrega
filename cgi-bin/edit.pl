@@ -19,3 +19,10 @@ my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar!");
 my $sth = $dbh->prepare("SELECT Text FROM Fakewiki WHERE Title=?");
 $sth->execute($title);
 
+my $i = 0;
+while( my @row = $sth->fetchrow_array ) {
+  @registro = split('-',$row[0]);
+  $i++;
+}
+$sth->finish;
+
