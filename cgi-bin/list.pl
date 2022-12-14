@@ -26,3 +26,11 @@ my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar!");;
 
 my $sth = $dbh->prepare("SELECT Title FROM Fakewiki");
 $sth->execute();
+
+my $i = 0;
+while( my @row = $sth->fetchrow_array ) {
+  $registro[$i] = $row[0];
+  $i++;
+}
+$sth->finish;
+$dbh->disconnect;
