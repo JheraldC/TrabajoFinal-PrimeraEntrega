@@ -76,4 +76,9 @@ foreach my $linea (@registro){
     print "<p><code>$1</code></p>";
   }
 }
-
+print <<HTML;
+</body>
+<hr>
+<a class=text href="list.pl">Volver al inicio</a>
+</html>
+HTML
