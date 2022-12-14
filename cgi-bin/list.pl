@@ -17,3 +17,12 @@ print<<HTML;
   <h1>Nuestras páginas wiki</h1>
   <hr>
 HTML
+
+my @registro;
+my $user = 'alumno';
+my $password = 'pweb1';
+my $dsn = "DBI:MariaDB:database=pweb1;host=localhost";
+my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar!");;
+
+my $sth = $dbh->prepare("SELECT Title FROM Fakewiki");
+$sth->execute();
