@@ -49,5 +49,8 @@ foreach my $linea (@registro){
      print "<h1>$1</h1>\n";
     }
   }
+  if($linea =~ /^(\*+)(.*)(\*+)$/){
+
+  }
 }
 
