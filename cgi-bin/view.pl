@@ -72,5 +72,8 @@ foreach my $linea (@registro){
   if(!(index($linea, "`") != -1) and !(index($linea, "#") != -1) and !(index($linea, "~") != -1) and !(index($linea, "*") != -1)){
     print "<p>$linea</p>";
   }
+  if($linea =~ /^`{3}((\n*.+)*)\n`{3}$/){
+    print "<p><code>$1</code></p>";
+  }
 }
 
