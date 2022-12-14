@@ -1,0 +1,23 @@
+a.text {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  width: 60px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 1;
+  color: black;
+}
+
+a.text:link, a.text:visited, a.text:focus {
+  background: yellow;
+}
+
+a.text:hover {
+  background: orange;
+}
+
+a.text:active {
+  background: red;
+  color: white;
+}
