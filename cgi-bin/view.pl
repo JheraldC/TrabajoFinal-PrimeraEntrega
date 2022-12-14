@@ -35,5 +35,8 @@ $sth->finish;
 
 foreach my $linea (@registro){
   $linea =~ s/^\s+//g;
+  if($linea =~ /^(#+)(.*)/){
+
+  }
 }
 
