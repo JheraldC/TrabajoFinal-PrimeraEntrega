@@ -42,3 +42,11 @@ foreach my $title (@registro){
   print "<a class=text style=color:blue href="."edit.pl?title=$title".">E</a>\n";
 }
 
+print "</ul>";
+print <<HTML;
+  <hr>
+  <a href="../new.html">Nueva página</a>
+  <br>
+  <a href="../index.html">Volver al inicio</a>
+  </body>
+</html>
