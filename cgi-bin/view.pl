@@ -36,7 +36,18 @@ $sth->finish;
 foreach my $linea (@registro){
   $linea =~ s/^\s+//g;
   if($linea =~ /^(#+)(.*)/){
-
+    if($linea =~ /^#{6}(.*)/){
+      print "<h6>$1</h6>\n";
+    }
+    elsif($linea =~ /^#{3}(.*)/){
+     print "<h3>$1</h3>\n";
+    }
+    elsif($linea =~ /^#{2}(.*)/){
+     print "<h2>$1</h2>\n";
+    }
+    elsif($linea =~ /^#{1}(.*)/){
+     print "<h1>$1</h1>\n";
+    }
   }
 }
 
