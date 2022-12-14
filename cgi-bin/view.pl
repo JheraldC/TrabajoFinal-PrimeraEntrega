@@ -33,3 +33,7 @@ while( my @row = $sth->fetchrow_array ) {
 }
 $sth->finish;
 
+foreach my $linea (@registro){
+  $linea =~ s/^\s+//g;
+}
+
