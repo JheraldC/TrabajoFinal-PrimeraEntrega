@@ -50,7 +50,18 @@ foreach my $linea (@registro){
     }
   }
   if($linea =~ /^(\*+)(.*)(\*+)$/){
-
+     if($linea =~ /^\*{3}(.*)\*{3}$/){
+       print "<p><strong><em>$1</em></strong></p>";
+     }
+     elsif($linea =~ /^\*{2}(.*)\_(.*)\_(.*)\*{2}$/){
+       print "<p><strong>$1<em>$2</em>$3</strong></p>";
+     }
+     elsif($linea =~ /^\*{2}(.*)\*{2}/){
+       print "<p><strong>$1</strong></p>"
+     }
+     elsif($linea =~ /^\*{1}(.*)\*{1}$/){
+       print "<p><em>$1</em></p>";
+     }
   }
 }
 
