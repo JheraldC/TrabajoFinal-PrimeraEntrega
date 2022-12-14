@@ -66,5 +66,8 @@ foreach my $linea (@registro){
   if($linea =~ /^~{2}(.*)~{2}$/){
     print "<p><del>$1</del></p>";
   }
+  if($linea =~ /^(.*)\[(.*)\]\((.*)\)(.*)/){
+   print "<p>$1<a href=$3>$2</a>$4</p>";
+  }
 }
 
